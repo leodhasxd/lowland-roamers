@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lowland Roamers | Dog Walking &amp; Sitting Services — Hillfoots, Clackmannanshire &amp; Kinross</title>
+  <meta name="description" content="Lowland Roamers offers bespoke dog walking, extra adventures, and home company pet sitting across Hillfoots, Clackmannanshire, and Kinross." />
+
+  <!-- Google Fonts: Editorial Serif (Fraunces) + Clean Geometric Sans (Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pine: {
+              DEFAULT: '#1b2e23',
+              dark: '#122018',
+              light: '#274032',
+            },
+            sandstone: {
+              DEFAULT: '#f6f3ec',
+              dark: '#ebe5d8',
+              light: '#fcfbf8',
+            },
+            sage: {
+              DEFAULT: '#4f6d58',
+              light: '#6f8f78',
+              dark: '#395241',
+            },
+            ochre: {
+              DEFAULT: '#d99b38',
+              light: '#e6b45e',
+              dark: '#b87e22',
+            },
+            charcoal: '#242926',
+          },
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'soft': '0 20px 45px -15px rgba(27, 46, 35, 0.14)',
+            'card': '0 14px 34px -10px rgba(27, 46, 35, 0.12)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Base typography & tactile Scottish Lowlands styling */
+    body {
+      background-color: #f6f3ec;
+      color: #242926;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .font-editorial {
+      font-family: 'Fraunces', Georgia, serif;
+    }
+
+    /* Subtle organic grain overlay for editorial warmth */
+    .paper-texture {
+      background-image: radial-gradient(rgba(27, 46, 35, 0.045) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+
+    /* Continuous subtle marquee ribbon */
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 28s linear infinite;
+    }
+    .animate-marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    /* Dog walker stride & tail wag transforms controlled via JS + smooth transitions */
+    .walker-part {
+      transform-box: fill-box;
+      transition: transform 0.08s linear;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f6f3ec;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #4f6d58;
+      border-radius: 9999px;
+      border: 2px solid #f6f3ec;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #1b2e23;
+    }
+
+    /* Image zoom on hover */
+    .service-img-wrap img {
+      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .service-card:hover .service-img-wrap img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-ochre selection:text-pine">
+
+  <!-- ===================================================================== -->
+  <!-- 1. STICKY HEADER & NAVIGATION                                         -->
+  <!-- ===================================================================== -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 px-4 sm:px-8">
+    <div id="header-inner" class="max-w-7xl mx-auto flex items-center justify-between rounded-full px-4 sm:px-7 py-2.5 transition-all duration-300 bg-pine/75 backdrop-blur-md border border-white/15 shadow-lg">
+      <!-- Brand Logo -->
+      <a href="#top" class="flex items-center gap-3 group focus:outline-none">
+        <div class="bg-sandstone rounded-full p-1.5 shadow-sm transition-transform duration-300 group-hover:scale-105">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/654a4150c8676d2600d32026/f94e432e-0fcb-4f98-825b-179f0b8aa83b/sketch1736014715993.png?format=1500w"
+            alt="Lowland Roamers Logo"
+            class="h-9 sm:h-11 w-auto object-contain"
+            onerror="this.src='https://placehold.co/120x48/f6f3ec/1b2e23?text=Lowland+Roamers'"
+          />
+        </div>
+        <div class="hidden sm:block">
+          <span class="font-editorial text-sandstone font-semibold tracking-wide text-base lg:text-lg block leading-none">LOWLAND ROAMERS</span>
+          <span class="text-[11px] uppercase tracking-[0.18em] text-ochre-light font-medium">Hillfoots &amp; Kinross</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-sandstone/90">
+        <a href="#trail-journey" class="hover:text-ochre-light transition-colors py-1">The Trail</a>
+        <a href="#services" class="hover:text-ochre-light transition-colors py-1">Services</a>
+        <a href="#meet-and-greet" class="hover:text-ochre-light transition-colors py-1">Meet &amp; Greet</a>
+        <a href="#kind-words" class="hover:text-ochre-light transition-colors py-1">Kind Words</a>
+      </nav>
+
+      <!-- Actions: Social Icons + Book CTA + Mobile Toggle -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Instagram -->
+        <a
+          href="http://www.instagram.com/danitaylor.co"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          class="p-2.5 rounded-full text-sandstone/85 hover:text-ochre-light hover:bg-white/10 transition-colors"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+
+        <!-- Facebook -->
+        <a
+          href="https://www.facebook.com/profile.php?id=61566536804648"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          class="hidden sm:inline-flex p-2.5 rounded-full text-sandstone/85 hover:text-ochre-light hover:bg-white/10 transition-colors"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+          </svg>
+        </a>
+
+        <!-- Primary Booking Trigger -->
+        <button
+          type="button"
+          onclick="openBookingModal('Free Meet & Greet')"
+          class="bg-ochre hover:bg-ochre-light text-pine font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-full shadow-md transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+        >
+          Book a Walk
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          aria-label="Toggle Menu"
+          class="md:hidden p-2.5 rounded-full text-sandstone hover:bg-white/10 transition-colors"
+        >
+          <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 17h16" />
+          </svg>
+          <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden max-w-7xl mx-auto mt-2 rounded-3xl bg-pine border border-white/15 p-5 shadow-2xl text-sandstone">
+      <div class="flex flex-col space-y-3 text-base font-medium">
+        <a href="#trail-journey" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-2xl hover:bg-white/10 transition-colors">The Parallax Trail</a>
+        <a href="#services" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-2xl hover:bg-white/10 transition-colors">Services &amp; Rates</a>
+        <a href="#meet-and-greet" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-2xl hover:bg-white/10 transition-colors">Meet &amp; Greet</a>
+        <a href="#kind-words" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-2xl hover:bg-white/10 transition-colors">Kind Words</a>
+        <div class="pt-3 border-t border-white/10 flex items-center justify-between px-2">
+          <div class="flex gap-3">
+            <a href="http://www.instagram.com/danitaylor.co" target="_blank" rel="noopener noreferrer" class="text-sm text-ochre-light underline">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=61566536804648" target="_blank" rel="noopener noreferrer" class="text-sm text-ochre-light underline">Facebook</a>
+          </div>
+          <button type="button" onclick="closeMobileMenu(); openBookingModal('Free Meet & Greet')" class="bg-ochre text-pine font-semibold text-sm px-4 py-2 rounded-full">
+            Book Free Meet
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- 2. FULL-BLEED HERO SECTION WITH PARALLAX PHOTOGRAPHY                  -->
+  <!-- ===================================================================== -->
+  <section id="top" class="relative min-h-[92vh] sm:min-h-screen flex items-center justify-center overflow-hidden bg-pine-dark">
+    <!-- Hero Background Photo with subtle scroll parallax -->
+    <div id="hero-bg-layer" class="absolute inset-0 w-full h-[115%] -top-[7%] will-change-transform">
+      <img
+        src="https://images.squarespace-cdn.com/content/v1/654a4150c8676d2600d32026/8c2f60e6-1fb4-4899-bf1b-daf68a69e775/aprildogs25-1.jpg?format=1500w"
+        alt="Happy dogs roaming in the Scottish countryside with Lowland Roamers"
+        class="w-full h-full object-cover object-center"
+        onerror="this.src='https://placehold.co/1600x1000/1b2e23/f6f3ec?text=Lowland+Roamers'"
+      />
+    </div>
+
+    <!-- Rich Atmospheric Scrim -->
+    <div class="absolute inset-0 bg-gradient-to-b from-pine-dark/70 via-pine-dark/45 to-pine-dark/85"></div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-8 pt-28 pb-20 text-center text-sandstone">
+      <!-- Location Pill -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-pine/80 backdrop-blur-md border border-ochre/40 text-ochre-light text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase mb-6 shadow-lg">
+        <span class="w-2 h-2 rounded-full bg-ochre animate-pulse"></span>
+        HILLFOOTS &bull; CLACKMANNANSHIRE &bull; KINROSS
+      </div>
+
+      <!-- Main Display Title -->
+      <h1 class="font-editorial text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-sandstone drop-shadow-sm leading-[1.05]">
+        LOWLAND ROAMERS
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="mt-4 sm:mt-6 font-editorial italic text-xl sm:text-3xl text-sandstone-dark/95 font-normal">
+        Dog Walking and Sitting Services
+      </p>
+
+      <p class="mt-4 max-w-xl mx-auto text-sm sm:text-base text-sandstone/80 leading-relaxed">
+        Tailored countryside trails, mental enrichment, and trusted home companionship across the Ochil foothills and Kinross-shire.
+      </p>
+
+      <!-- Hero Action Buttons -->
+      <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button
+          type="button"
+          onclick="openBookingModal('Free Meet & Greet')"
+          class="w-full sm:w-auto bg-ochre hover:bg-ochre-light text-pine font-bold px-8 py-4 rounded-full shadow-xl transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-sm sm:text-base"
+        >
+          Book a Free Meet &amp; Greet
+        </button>
+        <a
+          href="#services"
+          class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md border border-sandstone/30 text-sandstone font-semibold px-8 py-4 rounded-full transition-all duration-200 text-sm sm:text-base"
+        >
+          Explore Walks &amp; Rates
+        </a>
+      </div>
+
+      <!-- Scroll Prompt -->
+      <a href="#trail-journey" class="inline-flex flex-col items-center gap-2 mt-14 text-xs uppercase tracking-[0.22em] text-sandstone/70 hover:text-ochre-light transition-colors">
+        <span>Scroll to walk the hills</span>
+        <svg class="w-5 h-5 animate-bounce text-ochre" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Bottom Organic Contour Divider -->
+    <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none">
+      <svg viewBox="0 0 1440 70" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-10 sm:h-16 preserve-3d">
+        <path d="M0 32C280 78 520 -12 860 36C1140 75 1320 18 1440 28V70H0V32Z" fill="#f6f3ec"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 3. INTERACTIVE PARALLAX-SCROLLING DOG WALKER JOURNEY                  -->
+  <!-- ===================================================================== -->
+  <section id="trail-journey" class="relative bg-sandstone pt-12 pb-16 sm:pt-20 sm:pb-24 paper-texture overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.22em] text-sage block mb-2">Interactive Trail Experience</span>
+          <h2 class="font-editorial text-3xl sm:text-5xl font-bold text-pine leading-tight">
+            Walks on the Wild Side
+          </h2>
+        </div>
+        <p class="text-sm sm:text-base text-charcoal/80 max-w-md">
+          Scroll down the page to guide Dani and the pack across the Ochil Hills—every walk features fresh routes, photo updates, and GPS trail maps.
+        </p>
+      </div>
+
+      <!-- Multi-Layered Parallax Landscape Canvas / Stage -->
+      <div id="parallax-stage" class="relative w-full h-[330px] sm:h-[410px] rounded-3xl overflow-hidden shadow-soft border border-pine/10 bg-gradient-to-b from-[#dfeadf] via-[#eef3e8] to-[#f6f3ec]">
+        
+        <!-- Sky & Sun / Clouds Layer (Slowest Parallax) -->
+        <div id="layer-sky" class="absolute inset-0 pointer-events-none will-change-transform">
+          <!-- Warm Highland Sun -->
+          <div class="absolute top-8 right-12 sm:right-24 w-16 h-16 sm:w-24 sm:h-24 rounded-full bg-ochre/25 blur-md"></div>
+          <div class="absolute top-10 right-14 sm:right-26 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-ochre/40"></div>
+
+          <!-- Drifting Soft Clouds -->
+          <svg class="absolute top-10 left-[8%] w-28 sm:w-40 text-white/75" viewBox="0 0 160 50" fill="currentColor">
+            <path d="M25 42h105c12 0 20-7 20-16 0-8-6-15-15-16-4-10-14-16-26-16-11 0-21 6-25 15-4-2-9-3-14-3-12 0-22 9-23 20-8 1-14 7-14 14 0 8 6 12 12 12z"/>
+          </svg>
+          <svg class="absolute top-16 left-[52%] w-24 sm:w-36 text-white/60" viewBox="0 0 160 50" fill="currentColor">
+            <path d="M25 42h105c12 0 20-7 20-16 0-8-6-15-15-16-4-10-14-16-26-16-11 0-21 6-25 15-4-2-9-3-14-3-12 0-22 9-23 20-8 1-14 7-14 14 0 8 6 12 12 12z"/>
+          </svg>
+        </div>
+
+        <!-- Distant Ochil Hills Layer (Parallax Layer 1) -->
+        <div id="layer-hills-far" class="absolute bottom-14 left-0 w-[140%] -left-[10%] pointer-events-none will-change-transform">
+          <svg viewBox="0 0 1800 220" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-44 sm:h-56 preserve-3d">
+            <path d="M0 160C160 70 310 50 480 110C650 170 810 35 1010 65C1210 95 1360 155 1540 90C1660 45 1740 85 1800 110V220H0V160Z" fill="#9eb5a3" fill-opacity="0.55"/>
+          </svg>
+        </div>
+
+        <!-- Mid-Ground Heather Ridges & Pine Trees (Parallax Layer 2) -->
+        <div id="layer-hills-mid" class="absolute bottom-8 left-0 w-[150%] -left-[15%] pointer-events-none will-change-transform">
+          <svg viewBox="0 0 1800 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-36 sm:h-48 preserve-3d">
+            <!-- Rolling Sage Ridge -->
+            <path d="M0 130C220 175 390 60 640 95C890 130 1080 55 1330 105C1530 145 1670 80 1800 100V200H0V130Z" fill="#4f6d58"/>
+            <!-- Stylized Scottish Pines -->
+            <g fill="#274032">
+              <polygon points="240,75 222,122 258,122"/>
+              <polygon points="240,56 226,95 254,95"/>
+              <polygon points="275,85 260,126 290,126"/>
+
+              <polygon points="730,68 710,118 750,118"/>
+              <polygon points="730,48 715,88 745,88"/>
+
+              <polygon points="1180,62 1160,112 1200,112"/>
+              <polygon points="1180,44 1164,84 1196,84"/>
+              <polygon points="1218,74 1202,116 1234,116"/>
+
+              <polygon points="1590,64 1572,112 1608,112"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Foreground Winding Trail (Parallax Layer 3) -->
+        <div id="layer-foreground" class="absolute bottom-0 left-0 right-0 h-24 sm:h-28 pointer-events-none">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full preserve-3d" preserveAspectRatio="none">
+            <path d="M0 44C340 24 620 68 980 42C1200 26 1340 46 1440 38V120H0V44Z" fill="#1b2e23"/>
+            <!-- Dashed Footpath Trail -->
+            <path d="M0 64C340 44 620 88 980 62C1200 46 1340 66 1440 58" stroke="#d99b38" stroke-width="3" stroke-dasharray="10 10" stroke-linecap="round" opacity="0.75"/>
+          </svg>
+        </div>
+
+        <!-- =============================================================== -->
+        <!-- SCROLL-DRIVEN PARALLAX DOG WALKER & TWO DOGS ON LEADS           -->
+        <!-- =============================================================== -->
+        <div
+          id="dog-walker-rig"
+          class="absolute bottom-[36px] sm:bottom-[44px] left-[4%] will-change-transform pointer-events-none select-none z-20"
+          style="transform: translate3d(0px, 0px, 0px);"
+        >
+          <!-- Subtle Distance / Route Tooltip Tag above Walker -->
+          <div class="mb-1 inline-flex items-center gap-1.5 bg-pine/90 text-sandstone text-[10px] sm:text-xs font-semibold px-2.5 py-1 rounded-full shadow-md border border-ochre/40 whitespace-nowrap">
+            <span class="w-1.5 h-1.5 rounded-full bg-ochre"></span>
+            <span id="walker-status-label">Ochil Foothills Trail</span>
+          </div>
+
+          <!-- Detailed Animated SVG: Dani + Two Happy Dogs -->
+          <svg width="240" height="125" viewBox="0 0 240 125" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-48 sm:w-60 h-auto overflow-visible drop-shadow-md">
+            <!-- Ground Contact Shadows -->
+            <ellipse cx="48" cy="118" rx="22" ry="4" fill="#0d1711" fill-opacity="0.45"/>
+            <ellipse cx="136" cy="118" rx="18" ry="3.5" fill="#0d1711" fill-opacity="0.45"/>
+            <ellipse cx="195" cy="118" rx="20" ry="3.5" fill="#0d1711" fill-opacity="0.45"/>
+
+            <!-- ==================== DOG WALKER (DANI) ==================== -->
+            <g id="walker-body-group" class="walker-part">
+              <!-- Back Leg -->
+              <g id="walker-leg-back" class="walker-part" style="transform-origin: 46px 74px;">
+                <path d="M46 74L41 96L35 114" stroke="#242926" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Walking Boot -->
+                <path d="M32 114H41" stroke="#d99b38" stroke-width="5" stroke-linecap="round"/>
+              </g>
+
+              <!-- Front Leg -->
+              <g id="walker-leg-front" class="walker-part" style="transform-origin: 50px 74px;">
+                <path d="M50 74L56 95L62 114" stroke="#1b2e23" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Walking Boot -->
+                <path d="M59 114H68" stroke="#d99b38" stroke-width="5" stroke-linecap="round"/>
+              </g>
+
+              <!-- Backpack -->
+              <rect x="33" y="42" width="11" height="22" rx="5" fill="#4f6d58" stroke="#1b2e23" stroke-width="2"/>
+
+              <!-- Torso / Outdoor Weatherproof Jacket -->
+              <path d="M41 41C41 37 55 37 56 42L58 75H39L41 41Z" fill="#d99b38" stroke="#1b2e23" stroke-width="2"/>
+
+              <!-- Head & Ponytail -->
+              <circle cx="49" cy="26" r="8.5" fill="#f3c6a5" stroke="#1b2e23" stroke-width="2"/>
+              <!-- Hair / Ponytail -->
+              <path d="M41 25C41 19 46 16 52 17C55 18 57 20 57 22C52 21 46 22 41 25Z" fill="#4a3222"/>
+              <path id="walker-ponytail" class="walker-part" style="transform-origin: 40px 23px;" d="M40 23C34 23 31 28 33 34C36 32 39 29 41 25Z" fill="#4a3222"/>
+              <!-- Beanie Hat -->
+              <path d="M41 22C42 15 55 15 56 22H41Z" fill="#1b2e23"/>
+
+              <!-- Lead-Holding Arm -->
+              <g id="walker-arm" class="walker-part" style="transform-origin: 51px 45px;">
+                <path d="M51 45L64 56L75 55" stroke="#b87e22" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="76" cy="55" r="3" fill="#f3c6a5"/>
+              </g>
+            </g>
+
+            <!-- ==================== LEADS (DYNAMIC LINES) ==================== -->
+            <path id="lead-1" d="M76 55 Q 104 74, 138 83" stroke="#f6f3ec" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <path id="lead-2" d="M76 55 Q 136 72, 196 80" stroke="#e6b45e" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+
+            <!-- ==================== DOG 1 (TERRIER / SPANIEL MIX) ==================== -->
+            <g id="dog-1-group" class="walker-part">
+              <!-- Wagging Tail -->
+              <path id="dog1-tail" class="walker-part" style="transform-origin: 118px 86px;" d="M118 86L110 76" stroke="#8c583a" stroke-width="4" stroke-linecap="round"/>
+              <!-- Legs -->
+              <path id="dog1-leg-back" class="walker-part" style="transform-origin: 122px 96px;" d="M122 96L117 114" stroke="#6e4229" stroke-width="4.5" stroke-linecap="round"/>
+              <path id="dog1-leg-front" class="walker-part" style="transform-origin: 142px 96px;" d="M142 96L148 114" stroke="#8c583a" stroke-width="4.5" stroke-linecap="round"/>
+              <!-- Body -->
+              <rect x="117" y="84" width="30" height="15" rx="7.5" fill="#a86b46" stroke="#1b2e23" stroke-width="1.8"/>
+              <!-- Head -->
+              <circle cx="148" cy="81" r="8" fill="#a86b46" stroke="#1b2e23" stroke-width="1.8"/>
+              <!-- Snout -->
+              <ellipse cx="155" cy="82" rx="5" ry="3.5" fill="#c78861"/>
+              <circle cx="159" cy="81" r="1.5" fill="#1b2e23"/>
+              <!-- Floppy Ear -->
+              <ellipse cx="144" cy="82" rx="3.2" ry="6" fill="#5e361f"/>
+              <!-- Collar -->
+              <line x1="141" y1="86" x2="146" y2="81" stroke="#d99b38" stroke-width="3" stroke-linecap="round"/>
+            </g>
+
+            <!-- ==================== DOG 2 (BORDER COLLIE - JODIE!) ==================== -->
+            <g id="dog-2-group" class="walker-part">
+              <!-- Fluffy Tail -->
+              <path id="dog2-tail" class="walker-part" style="transform-origin: 174px 84px;" d="M174 84C166 80 163 73 166 69" stroke="#1f2421" stroke-width="5" stroke-linecap="round"/>
+              <!-- Back Legs -->
+              <path id="dog2-leg-back" class="walker-part" style="transform-origin: 178px 95px;" d="M178 95L172 114" stroke="#1f2421" stroke-width="5" stroke-linecap="round"/>
+              <!-- Front Legs -->
+              <path id="dog2-leg-front" class="walker-part" style="transform-origin: 202px 95px;" d="M202 95L210 114" stroke="#1f2421" stroke-width="5" stroke-linecap="round"/>
+              <!-- White Paws -->
+              <circle cx="172" cy="114" r="2.5" fill="#f6f3ec"/>
+              <circle cx="210" cy="114" r="2.5" fill="#f6f3ec"/>
+              <!-- Collie Body -->
+              <rect x="172" y="81" width="35" height="17" rx="8.5" fill="#1f2421" stroke="#122018" stroke-width="1.8"/>
+              <!-- White Chest Ruff -->
+              <path d="M201 82C206 84 208 91 203 96" stroke="#f6f3ec" stroke-width="5" stroke-linecap="round"/>
+              <!-- Head -->
+              <circle cx="209" cy="77" r="8.5" fill="#1f2421"/>
+              <!-- Snout -->
+              <ellipse cx="217" cy="78" rx="5.5" ry="3.8" fill="#f6f3ec"/>
+              <circle cx="222" cy="77" r="1.6" fill="#122018"/>
+              <!-- Pointed Collie Ears -->
+              <polygon points="204,70 202,61 209,68" fill="#1f2421"/>
+              <polygon points="209,69 211,60 214,69" fill="#1f2421"/>
+              <!-- Collar -->
+              <line x1="201" y1="83" x2="206" y2="78" stroke="#4f6d58" stroke-width="3" stroke-linecap="round"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Trail Milestone Cards Overlaid at Top of Stage -->
+        <div class="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 p-4 sm:p-6">
+          <div data-milestone="0" class="trail-milestone bg-white/85 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-pine/15 shadow-sm transition-all duration-300">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-ochre-dark">Step 01</span>
+              <span class="w-2 h-2 rounded-full bg-ochre"></span>
+            </div>
+            <h3 class="font-editorial text-sm sm:text-base font-bold text-pine">Free Meet &amp; Greet</h3>
+            <p class="text-xs text-charcoal/75 mt-0.5 hidden sm:block">Get to know each other in a calm, safe space.</p>
+          </div>
+
+          <div data-milestone="1" class="trail-milestone bg-white/65 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-pine/10 transition-all duration-300">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-sage">Step 02</span>
+              <span class="w-2 h-2 rounded-full bg-sage/40"></span>
+            </div>
+            <h3 class="font-editorial text-sm sm:text-base font-bold text-pine">Varied Hill Routes</h3>
+            <p class="text-xs text-charcoal/75 mt-0.5 hidden sm:block">Solo or paired walks tailored to your pup.</p>
+          </div>
+
+          <div data-milestone="2" class="trail-milestone bg-white/65 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-pine/10 transition-all duration-300">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-sage">Step 03</span>
+              <span class="w-2 h-2 rounded-full bg-sage/40"></span>
+            </div>
+            <h3 class="font-editorial text-sm sm:text-base font-bold text-pine">Photos &amp; Trail Maps</h3>
+            <p class="text-xs text-charcoal/75 mt-0.5 hidden sm:block">Live updates &amp; route snapshots sent to you.</p>
+          </div>
+
+          <div data-milestone="3" class="trail-milestone bg-white/65 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-pine/10 transition-all duration-300">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-sage">Step 04</span>
+              <span class="w-2 h-2 rounded-full bg-sage/40"></span>
+            </div>
+            <h3 class="font-editorial text-sm sm:text-base font-bold text-pine">Happy, Tired Pups</h3>
+            <p class="text-xs text-charcoal/75 mt-0.5 hidden sm:block">Nourished, stimulated &amp; ready for a nap.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress Bar Indicator underneath stage -->
+      <div class="mt-4 flex items-center gap-4 px-2">
+        <span class="text-xs font-semibold uppercase tracking-wider text-pine/70 whitespace-nowrap">Trail Progress</span>
+        <div class="flex-1 h-2 bg-pine/10 rounded-full overflow-hidden">
+          <div id="trail-progress-bar" class="h-full bg-gradient-to-r from-sage to-ochre rounded-full transition-all duration-100" style="width: 5%;"></div>
+        </div>
+        <span id="trail-progress-pct" class="text-xs font-bold text-pine tabular-nums">0%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 4. SERVICES SECTION (EXACT COPY, PHOTOS & PRICING)                    -->
+  <!-- ===================================================================== -->
+  <section id="services" class="py-16 sm:py-24 bg-sandstone-light border-t border-pine/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <!-- Section Heading -->
+      <div class="text-center max-w-2xl mx-auto mb-14 sm:mb-16">
+        <span class="inline-block text-xs font-bold uppercase tracking-[0.25em] text-sage mb-3">&mdash; Services &mdash;</span>
+        <h2 class="font-editorial text-3xl sm:text-5xl font-bold text-pine">
+          Adventures Tailored to Every Dog
+        </h2>
+        <p class="mt-4 text-sm sm:text-base text-charcoal/80">
+          Serving Hillfoots, Clackmannanshire, and Kinross with attentive, unhurried care—whether your companion thrives on woodland treks or cosy home visits.
+        </p>
+      </div>
+
+      <!-- 3 Service Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+        
+        <!-- CARD 1: Daily Dog Walking -->
+        <article class="service-card flex flex-col bg-sandstone rounded-3xl overflow-hidden border border-pine/10 shadow-card transition-all duration-300 hover:-translate-y-1.5">
+          <div class="service-img-wrap relative aspect-[4/5] overflow-hidden bg-pine/10">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/654a4150c8676d2600d32026/4f8d419d-e02e-46d4-a3bf-5ffd7b28d1f1/lowlandroamers-25+copy.jpg?format=1000w"
+              alt="Daily Dog Walking with Lowland Roamers"
+              class="w-full h-full object-cover object-center"
+              loading="lazy"
+              onerror="this.src='https://placehold.co/800x1000/4f6d58/f6f3ec?text=Daily+Dog+Walking'"
+            />
+            <div class="absolute top-4 left-4 bg-pine/90 backdrop-blur-md text-sandstone text-xs font-bold px-3.5 py-1.5 rounded-full shadow">
+              1 hour &bull; £12.50
+            </div>
+          </div>
+
+          <div class="flex-1 flex flex-col justify-between p-6 sm:p-8">
+            <div>
+              <h3 class="font-editorial text-2xl sm:text-3xl font-bold text-pine mb-3">
+                Daily Dog Walking
+              </h3>
+              <p class="text-sm sm:text-base text-charcoal/85 leading-relaxed">
+                A full 60 minute solo or paired walk, on or off lead with a trail map and photos of our walk sent to you to keep you updated. Daily walks with different routes for nourishment and mental stimulation.
+              </p>
+            </div>
+
+            <div class="mt-6 pt-5 border-t border-pine/10 flex items-center justify-between gap-4">
+              <div>
+                <span class="text-xs uppercase tracking-wider text-sage font-semibold block">Rate</span>
+                <span class="font-editorial text-lg font-bold text-pine">1 hour | £12.50</span>
+              </div>
+              <button
+                type="button"
+                onclick="openBookingModal('Daily Dog Walking (1 hour | £12.50)')"
+                class="bg-pine hover:bg-sage text-sandstone text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-full transition-colors cursor-pointer"
+              >
+                Enquire
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 2: Extra Adventure -->
+        <article class="service-card flex flex-col bg-sandstone rounded-3xl overflow-hidden border border-pine/10 shadow-card transition-all duration-300 hover:-translate-y-1.5">
+          <div class="service-img-wrap relative aspect-[4/5] overflow-hidden bg-pine/10">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/654a4150c8676d2600d32026/7460240b-c2b3-4a20-ac5d-da9d4c14bd8b/aprildogs25-3.jpg?format=1000w"
+              alt="Extra Adventure half-day dog outing"
+              class="w-full h-full object-cover object-center"
+              loading="lazy"
+              onerror="this.src='https://placehold.co/800x1000/4f6d58/f6f3ec?text=Extra+Adventure'"
+            />
+            <div class="absolute top-4 left-4 bg-ochre text-pine text-xs font-bold px-3.5 py-1.5 rounded-full shadow">
+              ~4 Hours Out &bull; £30
+            </div>
+          </div>
+
+          <div class="flex-1 flex flex-col justify-between p-6 sm:p-8">
+            <div>
+              <h3 class="font-editorial text-2xl sm:text-3xl font-bold text-pine mb-3">
+                Extra Adventure
+              </h3>
+              <p class="text-sm sm:text-base text-charcoal/85 leading-relaxed">
+                If you are needing a bit of extra time to yourself or are longer away from home I can take them with me. About four hours out the house with two hour long walks with my groups. A little rest and refreshment provided. With photo updates and trail maps sent to you.
+              </p>
+            </div>
+
+            <div class="mt-6 pt-5 border-t border-pine/10 flex items-center justify-between gap-4">
+              <div>
+                <span class="text-xs uppercase tracking-wider text-sage font-semibold block">Rate</span>
+                <span class="font-editorial text-lg font-bold text-pine">£30</span>
+              </div>
+              <button
+                type="button"
+                onclick="openBookingModal('Extra Adventure (~4 hours | £30)')"
+                class="bg-pine hover:bg-sage text-sandstone text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-full transition-colors cursor-pointer"
+              >
+                Enquire
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 3: Home Company -->
+        <article class="service-card flex flex-col bg-sandstone rounded-3xl overflow-hidden border border-pine/10 shadow-card transition-all duration-300 hover:-translate-y-1.5">
+          <div class="service-img-wrap relative aspect-[4/5] overflow-hidden bg-pine/10">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/654a4150c8676d2600d32026/a7eaa0a0-8ba4-404b-9380-a6ebb13cea96/lowlandroamers-35.jpg?format=1000w"
+              alt="Home Company pet sitting and puppy drop-ins"
+              class="w-full h-full object-cover object-center"
+              loading="lazy"
+              onerror="this.src='https://placehold.co/800x1000/4f6d58/f6f3ec?text=Home+Company'"
+            />
+            <div class="absolute top-4 left-4 bg-pine/90 backdrop-blur-md text-sandstone text-xs font-bold px-3.5 py-1.5 rounded-full shadow">
+              30 mins £8 &bull; 1 hr £12.50
+            </div>
+          </div>
+
+          <div class="flex-1 flex flex-col justify-between p-6 sm:p-8">
+            <div>
+              <h3 class="font-editorial text-2xl sm:text-3xl font-bold text-pine mb-3">
+                Home Company
+              </h3>
+              <p class="text-sm sm:text-base text-charcoal/85 leading-relaxed">
+                Have an older dog or puppies at home? I can do a drop in for 30 mins or by the hour pet sitting at your home to give your furry companion company if they struggle with separation anxiety or need a play and toilet break.
+              </p>
+            </div>
+
+            <div class="mt-6 pt-5 border-t border-pine/10 flex items-center justify-between gap-4">
+              <div>
+                <span class="text-xs uppercase tracking-wider text-sage font-semibold block">Rate</span>
+                <span class="font-editorial text-base sm:text-lg font-bold text-pine">30 mins £8 | 1 hr £12.50</span>
+              </div>
+              <button
+                type="button"
+                onclick="openBookingModal('Home Company (30 mins £8 | 1 hour £12.50)')"
+                class="bg-pine hover:bg-sage text-sandstone text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-full transition-colors cursor-pointer"
+              >
+                Enquire
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 5. MEET AND GREET SECTION (DEEP FOREST PINE EDITORIAL LAYOUT)         -->
+  <!-- ===================================================================== -->
+  <section id="meet-and-greet" class="relative py-20 sm:py-28 bg-pine text-sandstone overflow-hidden">
+    <!-- Subtle Decorative Background Contour -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none">
+      <svg class="w-full h-full" viewBox="0 0 1200 600" fill="none">
+        <circle cx="150" cy="120" r="280" stroke="#d99b38" stroke-width="1.5" stroke-dasharray="8 8"/>
+        <circle cx="1050" cy="480" r="340" stroke="#f6f3ec" stroke-width="1.5"/>
+      </svg>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        
+        <!-- Left Column: Copy & CTA -->
+        <div class="lg:col-span-6 text-center lg:text-left">
+          <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-ochre-light mb-4">
+            <span class="w-6 h-px bg-ochre-light"></span>
+            First Steps Together
+          </span>
+
+          <h2 class="font-editorial text-3xl sm:text-5xl font-bold text-sandstone leading-tight">
+            Meet and Greet
+          </h2>
+
+          <p class="mt-6 text-base sm:text-lg text-sandstone/90 leading-relaxed">
+            Let’s get together! A free meet up so I can learn bit about your dog, any reactivity or concerns and to make sure we all get along easy. We can discuss your pets needs and the services you require. A safe space inside or outside to ask me any questions and so you can get to know me too.
+          </p>
+
+          <!-- Trust Highlights -->
+          <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+            <div class="bg-pine-light/70 border border-white/10 rounded-2xl p-4">
+              <span class="text-ochre-light font-bold text-sm block">100% Free</span>
+              <span class="text-xs text-sandstone/75 mt-1 block">No-obligation intro chat</span>
+            </div>
+            <div class="bg-pine-light/70 border border-white/10 rounded-2xl p-4">
+              <span class="text-ochre-light font-bold text-sm block">Reactivity Aware</span>
+              <span class="text-xs text-sandstone/75 mt-1 block">Tailored solo or paired care</span>
+            </div>
+            <div class="bg-pine-light/70 border border-white/10 rounded-2xl p-4">
+              <span class="text-ochre-light font-bold text-sm block">Inside or Out</span>
+              <span class="text-xs text-sandstone/75 mt-1 block">Wherever your dog feels safest</span>
+            </div>
+          </div>
+
+          <div class="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <button
+              type="button"
+              onclick="openBookingModal('Free Meet & Greet')"
+              class="w-full sm:w-auto bg-ochre hover:bg-ochre-light text-pine font-bold px-9 py-4 rounded-full shadow-xl transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-sm sm:text-base"
+            >
+              Book
+            </button>
+            <a
+              href="mailto:lowlandroamers@outlook.com?subject=Meet%20and%20Greet%20Enquiry"
+              class="text-sm font-medium text-sandstone/85 hover:text-ochre-light underline underline-offset-4 transition-colors"
+            >
+              Or email lowlandroamers@outlook.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Meet & Greet Photo with Offset Frame -->
+        <div class="lg:col-span-6">
+          <div class="relative max-w-md mx-auto">
+            <!-- Decorative Ochre Offset Accent -->
+            <div class="absolute -inset-3 sm:-inset-4 rounded-3xl border-2 border-ochre/40 translate-x-2 translate-y-2 pointer-events-none"></div>
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl aspect-[2/3] bg-pine-dark">
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/654a4150c8676d2600d32026/c51b9e22-1d4d-4dc1-8aba-e5da6912798e/antoniaalex-191.jpg?format=1000w"
+                alt="Dani from Lowland Roamers during a friendly dog meet and greet"
+                class="w-full h-full object-cover object-center"
+                loading="lazy"
+                onerror="this.src='https://placehold.co/800x1200/274032/f6f3ec?text=Meet+and+Greet'"
+              />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 6. "WALKS ON THE WILD SIDE" SCALLOPED / WAVE MARQUEE RIBBON           -->
+  <!-- ===================================================================== -->
+  <div class="bg-ochre text-pine py-4 sm:py-5 overflow-hidden border-y border-pine/15 select-none">
+    <div class="animate-marquee-track flex items-center gap-10">
+      <span class="font-editorial text-xl sm:text-3xl font-bold tracking-wider uppercase flex items-center gap-10">
+        <span>WALKS ON THE WILD SIDE</span>
+        <span class="text-pine/50">&bull;</span>
+        <span>HILLFOOTS &bull; CLACKMANNANSHIRE &bull; KINROSS</span>
+        <span class="text-pine/50">&bull;</span>
+        <span>WALKS ON THE WILD SIDE</span>
+        <span class="text-pine/50">&bull;</span>
+        <span>PHOTO UPDATES &amp; TRAIL MAPS</span>
+        <span class="text-pine/50">&bull;</span>
+      </span>
+      <!-- Duplicated for seamless infinite loop -->
+      <span class="font-editorial text-xl sm:text-3xl font-bold tracking-wider uppercase flex items-center gap-10" aria-hidden="true">
+        <span>WALKS ON THE WILD SIDE</span>
+        <span class="text-pine/50">&bull;</span>
+        <span>HILLFOOTS &bull; CLACKMANNANSHIRE &bull; KINROSS</span>
+        <span class="text-pine/50">&bull;</span>
+        <span>WALKS ON THE WILD SIDE</span>
+        <span class="text-pine/50">&bull;</span>
+        <span>PHOTO UPDATES &amp; TRAIL MAPS</span>
+        <span class="text-pine/50">&bull;</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 7. KIND WORDS TESTIMONIAL SECTION                                     -->
+  <!-- ===================================================================== -->
+  <section id="kind-words" class="py-20 sm:py-28 bg-sandstone paper-texture">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="bg-pine-dark text-sandstone rounded-[2rem] overflow-hidden shadow-soft border border-pine/15">
+        <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+          
+          <!-- Left Photo: Jodie / Countryside Walk -->
+          <div class="lg:col-span-5 relative min-h-[300px] sm:min-h-[420px]">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/654a4150c8676d2600d32026/af85a24c-fa22-4782-a84c-2a32abc383bd/lowlandroamers8.jpg?format=1000w"
+              alt="Happy dog out on a hillside walk with Lowland Roamers"
+              class="w-full h-full object-cover object-center"
+              loading="lazy"
+              onerror="this.src='https://placehold.co/900x700/1b2e23/f6f3ec?text=Kind+Words'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-pine-dark/60 via-transparent to-transparent lg:hidden"></div>
+          </div>
+
+          <!-- Right Testimonial Quote -->
+          <div class="lg:col-span-7 p-8 sm:p-12 lg:p-16 flex flex-col justify-center">
+            <div class="flex items-center gap-1 text-ochre mb-6" aria-label="5 out of 5 stars">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+
+            <span class="text-xs font-bold uppercase tracking-[0.22em] text-ochre-light mb-2">Kind Words</span>
+            <h2 class="font-editorial text-2xl sm:text-4xl font-bold text-sandstone mb-6">
+              Trusted by Local Dog Owners
+            </h2>
+
+            <blockquote class="font-editorial italic text-lg sm:text-2xl text-sandstone/95 leading-relaxed">
+              &ldquo;Dani was absolutely amazing with our border collie. They spent all day out in the hills together - Jodie came back exhausted. Jodie’s not the easiest dog, with reactivity and separation issues but Dani totally understood this. We got lovely photo updates of their walk together. It was brilliant to know Jodie was so looked after&rdquo;
+            </blockquote>
+
+            <div class="mt-6 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-sage flex items-center justify-center font-editorial font-bold text-sandstone">
+                S
+              </div>
+              <div>
+                <div class="font-semibold text-sandstone">Sophie</div>
+                <div class="text-xs text-sandstone/70">Border Collie Owner &bull; Hillfoots</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 8. FOOTER WITH SUBTLE PHOTO BACKDROP & ONE-CLICK EMAIL COPY           -->
+  <!-- ===================================================================== -->
+  <footer class="relative bg-pine-dark text-sandstone overflow-hidden">
+    <!-- Subtle Background Image -->
+    <div class="absolute inset-0 opacity-20 pointer-events-none">
+      <img
+        src="https://images.squarespace-cdn.com/content/v1/654a4150c8676d2600d32026/7460240b-c2b3-4a20-ac5d-da9d4c14bd8b/aprildogs25-3.jpg?format=1500w"
+        alt=""
+        class="w-full h-full object-cover object-center"
+      />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-pine-dark via-pine-dark/85 to-pine-dark/75 pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-16 sm:py-20">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-10 pb-12 border-b border-white/15">
+        <!-- Brand Info -->
+        <div class="flex items-center gap-4">
+          <div class="bg-sandstone rounded-2xl p-2 shadow-md">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/654a4150c8676d2600d32026/f94e432e-0fcb-4f98-825b-179f0b8aa83b/sketch1736014715993.png?format=1500w"
+              alt="Lowland Roamers"
+              class="h-12 w-auto object-contain"
+            />
+          </div>
+          <div>
+            <h3 class="font-editorial text-2xl font-bold text-sandstone">Lowland Roamers</h3>
+            <p class="text-xs sm:text-sm text-ochre-light font-medium tracking-wider uppercase mt-0.5">
+              Hillfoots &bull; Clackmannanshire &bull; Kinross
+            </p>
+          </div>
+        </div>
+
+        <!-- Contact & Social Controls -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
+          <!-- Email + Copy Button -->
+          <div class="flex items-center justify-between gap-3 bg-white/10 backdrop-blur-md border border-white/15 rounded-full px-5 py-3">
+            <a href="mailto:lowlandroamers@outlook.com" class="text-sm font-medium text-sandstone hover:text-ochre-light transition-colors">
+              lowlandroamers@outlook.com
+            </a>
+            <button
+              type="button"
+              onclick="copyEmailAddress()"
+              class="text-xs font-bold uppercase tracking-wider bg-ochre text-pine px-3 py-1 rounded-full hover:bg-ochre-light transition-colors cursor-pointer"
+              title="Copy email address"
+            >
+              Copy
+            </button>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex items-center gap-3">
+            <a
+              href="http://www.instagram.com/danitaylor.co"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/15 rounded-full px-5 py-3 text-sm font-medium transition-colors"
+            >
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              <span>Instagram</span>
+            </a>
+
+            <a
+              href="https://www.facebook.com/profile.php?id=61566536804648"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/15 rounded-full px-5 py-3 text-sm font-medium transition-colors"
+            >
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+              <span>Facebook</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-sandstone/65">
+        <p>&copy; <span id="year-span">2026</span> Lowland Roamers. Dog Walking and Sitting Services.</p>
+        <div class="flex items-center gap-6">
+          <a href="#services" class="hover:text-sandstone transition-colors">Services</a>
+          <a href="#meet-and-greet" class="hover:text-sandstone transition-colors">Meet &amp; Greet</a>
+          <a href="#kind-words" class="hover:text-sandstone transition-colors">Kind Words</a>
+          <button type="button" onclick="openBookingModal('Free Meet & Greet')" class="hover:text-ochre-light transition-colors cursor-pointer">Contact</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- 9. INTERACTIVE BOOKING / ENQUIRY MODAL                                -->
+  <!-- ===================================================================== -->
+  <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-pine-dark/75 backdrop-blur-sm">
+    <div class="relative w-full max-w-lg bg-sandstone rounded-3xl p-6 sm:p-8 shadow-2xl border border-pine/15 max-h-[90vh] overflow-y-auto">
+      <button
+        type="button"
+        onclick="closeBookingModal()"
+        aria-label="Close modal"
+        class="absolute top-5 right-5 p-2 rounded-full bg-pine/10 hover:bg-pine/20 text-pine transition-colors cursor-pointer"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <span class="text-xs font-bold uppercase tracking-[0.2em] text-sage block mb-1">Lowland Roamers</span>
+      <h3 class="font-editorial text-2xl sm:text-3xl font-bold text-pine">Book a Walk or Meet &amp; Greet</h3>
+      <p class="text-xs sm:text-sm text-charcoal/80 mt-1.5">
+        Tell Dani a little about your dog and preferred service across Hillfoots, Clackmannanshire, or Kinross.
+      </p>
+
+      <form id="booking-form" onsubmit="handleBookingSubmit(event)" class="mt-6 space-y-4">
+        <div>
+          <label for="service-select" class="block text-xs font-bold uppercase tracking-wider text-pine mb-1.5">Service</label>
+          <select id="service-select" class="w-full rounded-2xl bg-white border border-pine/20 px-4 py-3 text-sm text-charcoal focus:outline-none focus:border-pine">
+            <option value="Free Meet & Greet">Free Meet &amp; Greet</option>
+            <option value="Daily Dog Walking (1 hour | £12.50)">Daily Dog Walking (1 hour | £12.50)</option>
+            <option value="Extra Adventure (~4 hours | £30)">Extra Adventure (~4 hours | £30)</option>
+            <option value="Home Company (30 mins £8 | 1 hour £12.50)">Home Company (30 mins £8 | 1 hour £12.50)</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="owner-name" class="block text-xs font-bold uppercase tracking-wider text-pine mb-1.5">Your Name</label>
+            <input id="owner-name" type="text" required placeholder="e.g. Sophie" class="w-full rounded-2xl bg-white border border-pine/20 px-4 py-3 text-sm text-charcoal focus:outline-none focus:border-pine" />
+          </div>
+          <div>
+            <label for="dog-name" class="block text-xs font-bold uppercase tracking-wider text-pine mb-1.5">Dog's Name &amp; Breed</label>
+            <input id="dog-name" type="text" required placeholder="e.g. Jodie, Border Collie" class="w-full rounded-2xl bg-white border border-pine/20 px-4 py-3 text-sm text-charcoal focus:outline-none focus:border-pine" />
+          </div>
+        </div>
+
+        <div>
+          <label for="owner-area" class="block text-xs font-bold uppercase tracking-wider text-pine mb-1.5">Area / Village</label>
+          <input id="owner-area" type="text" required placeholder="Hillfoots, Clackmannanshire, or Kinross" class="w-full rounded-2xl bg-white border border-pine/20 px-4 py-3 text-sm text-charcoal focus:outline-none focus:border-pine" />
+        </div>
+
+        <div>
+          <label for="owner-notes" class="block text-xs font-bold uppercase tracking-wider text-pine mb-1.5">Notes (Reactivity, schedule, preferences)</label>
+          <textarea id="owner-notes" rows="3" placeholder="Let me know about your dog's routine, lead preferences, or any concerns..." class="w-full rounded-2xl bg-white border border-pine/20 px-4 py-3 text-sm text-charcoal focus:outline-none focus:border-pine"></textarea>
+        </div>
+
+        <div class="pt-2 flex flex-col sm:flex-row gap-3">
+          <button
+            type="submit"
+            class="flex-1 bg-pine hover:bg-sage text-sandstone font-bold py-3.5 px-6 rounded-full shadow-lg transition-colors cursor-pointer text-sm"
+          >
+            Compose Email to Dani
+          </button>
+          <button
+            type="button"
+            onclick="copyEnquirySummary()"
+            class="bg-ochre/20 hover:bg-ochre/35 text-pine font-semibold py-3.5 px-5 rounded-full transition-colors cursor-pointer text-sm"
+          >
+            Copy Enquiry
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 10. NON-INTRUSIVE TOAST NOTIFICATION (REPLACES ALERT)                 -->
+  <!-- ===================================================================== -->
+  <div id="toast-banner" class="fixed bottom-5 right-5 z-50 translate-y-24 opacity-0 pointer-events-none transition-all duration-300 bg-pine text-sandstone border border-ochre/40 px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 text-sm font-medium">
+    <span class="w-2.5 h-2.5 rounded-full bg-ochre"></span>
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 11. PARALLAX ENGINE & INTERACTIVE LOGIC                               -->
+  <!-- ===================================================================== -->
+  <script>
+    // Set current copyright year
+    document.getElementById('year-span').textContent = new Date().getFullYear();
+
+    // Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+      menuIconOpen.classList.remove('hidden');
+      menuIconClose.classList.add('hidden');
+    }
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIconOpen.classList.add('hidden');
+        menuIconClose.classList.remove('hidden');
+      } else {
+        closeMobileMenu();
+      }
+    });
+
+    // Toast helper (never uses alert())
+    let toastTimeout = null;
+    function showToast(msg) {
+      const toast = document.getElementById('toast-banner');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.textContent = msg;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3400);
+    }
+
+    // Copy Email helper using fallback-safe execCommand
+    function copyTextSafe(text, successMessage) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast(successMessage);
+      } catch (err) {
+        showToast('Email: lowlandroamers@outlook.com');
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function copyEmailAddress() {
+      copyTextSafe('lowlandroamers@outlook.com', 'Copied lowlandroamers@outlook.com to clipboard!');
+    }
+
+    // Booking Modal Controls
+    const bookingModal = document.getElementById('booking-modal');
+    const serviceSelect = document.getElementById('service-select');
+
+    function openBookingModal(selectedService) {
+      if (selectedService) {
+        for (let i = 0; i < serviceSelect.options.length; i++) {
+          if (serviceSelect.options[i].value === selectedService) {
+            serviceSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      bookingModal.classList.remove('hidden');
+      bookingModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBookingModal() {
+      bookingModal.classList.add('hidden');
+      bookingModal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    bookingModal.addEventListener('click', (e) => {
+      if (e.target === bookingModal) closeBookingModal();
+    });
+
+    function buildEnquiryText() {
+      const service = serviceSelect.value;
+      const owner = document.getElementById('owner-name').value.trim() || 'A local dog owner';
+      const dog = document.getElementById('dog-name').value.trim() || 'My dog';
+      const area = document.getElementById('owner-area').value.trim() || 'Hillfoots / Kinross';
+      const notes = document.getElementById('owner-notes').value.trim() || 'Looking forward to chatting!';
+      return `Hi Dani,\n\nI'd love to enquire about: ${service}\n\nName: ${owner}\nDog: ${dog}\nArea: ${area}\nNotes: ${notes}\n\nThank you!`;
+    }
+
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      const service = serviceSelect.value;
+      const body = encodeURIComponent(buildEnquiryText());
+      const subject = encodeURIComponent(`Lowland Roamers Enquiry — ${service}`);
+      window.location.href = `mailto:lowlandroamers@outlook.com?subject=${subject}&body=${body}`;
+      showToast('Opening your email app for lowlandroamers@outlook.com...');
+      closeBookingModal();
+    }
+
+    function copyEnquirySummary() {
+      copyTextSafe(buildEnquiryText(), 'Enquiry details copied! Ready to paste into email or DM.');
+    }
+
+    // =========================================================================
+    // MULTI-LAYERED PARALLAX SCROLLING DOG WALKER ANIMATION ENGINE
+    // =========================================================================
+    const heroBgLayer = document.getElementById('hero-bg-layer');
+    const parallaxStage = document.getElementById('parallax-stage');
+    const layerSky = document.getElementById('layer-sky');
+    const layerHillsFar = document.getElementById('layer-hills-far');
+    const layerHillsMid = document.getElementById('layer-hills-mid');
+    const dogWalkerRig = document.getElementById('dog-walker-rig');
+    const progressBar = document.getElementById('trail-progress-bar');
+    const progressPct = document.getElementById('trail-progress-pct');
+    const statusLabel = document.getElementById('walker-status-label');
+    const milestones = document.querySelectorAll('.trail-milestone');
+
+    // Walker & Dog Limb Elements for Stride Cycle
+    const walkerLegFront = document.getElementById('walker-leg-front');
+    const walkerLegBack = document.getElementById('walker-leg-back');
+    const walkerBodyGroup = document.getElementById('walker-body-group');
+    const walkerPonytail = document.getElementById('walker-ponytail');
+    const dog1LegFront = document.getElementById('dog1-leg-front');
+    const dog1LegBack = document.getElementById('dog1-leg-back');
+    const dog1Tail = document.getElementById('dog1-tail');
+    const dog2LegFront = document.getElementById('dog2-leg-front');
+    const dog2LegBack = document.getElementById('dog2-leg-back');
+    const dog2Tail = document.getElementById('dog2-tail');
+
+    const routeLabels = [
+      '1. Ochil Foothills Intro',
+      '2. Woodland & Hill Trails',
+      '3. Photo & GPS Map Update',
+      '4. Homeward Bound!'
+    ];
+
+    let ticking = false;
+
+    function updateParallaxScene() {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const windowH = window.innerHeight;
+      const docHeight = Math.max(document.body.scrollHeight - windowH, 1);
+
+      // 1. Subtle Hero Background Depth Parallax
+      if (heroBgLayer && scrollY < windowH * 1.2) {
+        heroBgLayer.style.transform = `translate3d(0, ${scrollY * 0.28}px, 0)`;
+      }
+
+      // 2. Calculate Trail Progress (combines overall page scroll + stage visibility for smooth continuous travel)
+      const globalProgress = Math.min(Math.max(scrollY / docHeight, 0), 1);
+
+      if (parallaxStage && dogWalkerRig) {
+        const stageRect = parallaxStage.getBoundingClientRect();
+        const stageWidth = parallaxStage.offsetWidth;
+        const rigWidth = dogWalkerRig.offsetWidth || 220;
+
+        // Local progress as user scrolls past the trail section + weighted global scroll
+        const localRaw = (windowH - stageRect.top) / (windowH + stageRect.height);
+        const localProgress = Math.min(Math.max(localRaw, 0), 1);
+        const combinedProgress = Math.min(Math.max((localProgress * 0.65) + (globalProgress * 0.35), 0), 1);
+
+        // Horizontal travel range inside stage
+        const maxTravelX = Math.max(stageWidth - rigWidth - 28, 20);
+        const walkerX = combinedProgress * maxTravelX;
+
+        // Subtle undulating vertical contour following the footpath curve
+        const contourY = Math.sin(combinedProgress * Math.PI * 2.2) * 6;
+
+        // Apply parallax speeds to background hills (moving opposite to walker for depth)
+        if (layerSky) layerSky.style.transform = `translate3d(${-combinedProgress * 22}px, 0, 0)`;
+        if (layerHillsFar) layerHillsFar.style.transform = `translate3d(${-combinedProgress * 65}px, 0, 0)`;
+        if (layerHillsMid) layerHillsMid.style.transform = `translate3d(${-combinedProgress * 135}px, 0, 0)`;
+
+        // Move Dog Walker Rig across the trail
+        dogWalkerRig.style.transform = `translate3d(${walkerX}px, ${contourY}px, 0)`;
+
+        // Stride cycle synchronized directly to scroll position
+        const stridePhase = scrollY * 0.045;
+        const swing = Math.sin(stridePhase);
+        const bounce = Math.abs(Math.cos(stridePhase)) * -2.5;
+
+        if (walkerBodyGroup) walkerBodyGroup.style.transform = `translateY(${bounce}px)`;
+        if (walkerLegFront) walkerLegFront.style.transform = `rotate(${swing * 22}deg)`;
+        if (walkerLegBack) walkerLegBack.style.transform = `rotate(${-swing * 22}deg)`;
+        if (walkerPonytail) walkerPonytail.style.transform = `rotate(${swing * 12}deg)`;
+
+        // Dogs trotting & tails wagging happily
+        const dogStride = Math.sin(stridePhase * 1.35);
+        const tailWag = Math.sin(stridePhase * 2.4) * 18;
+
+        if (dog1LegFront) dog1LegFront.style.transform = `rotate(${dogStride * 26}deg)`;
+        if (dog1LegBack) dog1LegBack.style.transform = `rotate(${-dogStride * 26}deg)`;
+        if (dog1Tail) dog1Tail.style.transform = `rotate(${tailWag}deg)`;
+
+        if (dog2LegFront) dog2LegFront.style.transform = `rotate(${-dogStride * 28}deg)`;
+        if (dog2LegBack) dog2LegBack.style.transform = `rotate(${dogStride * 28}deg)`;
+        if (dog2Tail) dog2Tail.style.transform = `rotate(${-tailWag}deg)`;
+
+        // Update Trail Progress Bar & Active Milestone Card
+        const pct = Math.round(combinedProgress * 100);
+        if (progressBar) progressBar.style.width = `${Math.max(pct, 4)}%`;
+        if (progressPct) progressPct.textContent = `${pct}%`;
+
+        const activeIdx = Math.min(Math.floor(combinedProgress * 4), 3);
+        if (statusLabel) statusLabel.textContent = routeLabels[activeIdx];
+
+        milestones.forEach((card, idx) => {
+          if (idx === activeIdx) {
+            card.classList.remove('bg-white/65', 'border-pine/10');
+            card.classList.add('bg-white', 'border-ochre', 'shadow-md', '-translate-y-0.5');
+          } else {
+            card.classList.remove('bg-white', 'border-ochre', 'shadow-md', '-translate-y-0.5');
+            card.classList.add('bg-white/65', 'border-pine/10');
+          }
+        });
+      }
+
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallaxScene);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    window.addEventListener('resize', updateParallaxScene, { passive: true });
+    window.addEventListener('load', updateParallaxScene);
+  </script>
+</body>
+</html>
